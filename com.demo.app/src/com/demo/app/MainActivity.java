@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.demo.app.R;
 import com.demo.service.IServiceCallback;
-import com.demo.service.Msg;
+//import com.demo.service.Msg;
 import com.demo.service.ServiceDemoAidl;
 
 import java.util.List;
@@ -32,20 +32,20 @@ public class MainActivity extends Activity {
 
         @Override
         public void handleMessage(Message msg) {
-            // TODO Auto-generated method stub
-            switch(msg.what) {
-                case Msg.SHOW_MSG:
-                case Msg.HIDE_MSG:
-                    Bundle b = new Bundle();
-                    String str;
-                    b = msg.getData();
-                    str = b.getString("MSGTIP");
-                    Log.v("appDemo", str);
-                    mTextView.setText(str);
-                    break;
-                default:
-                    break;
-            }
+//            // TODO Auto-generated method stub
+//            switch(msg.what) {
+//                case Msg.SHOW_MSG:
+//                case Msg.HIDE_MSG:
+//                    Bundle b = new Bundle();
+//                    String str;
+//                    b = msg.getData();
+//                    str = b.getString("MSGTIP");
+//                    Log.v("appDemo", str);
+//                    mTextView.setText(str);
+//                    break;
+//                default:
+//                    break;
+//            }
         }
     };
     
@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
         }
     }
     
- // Á¬½Óservice
+ // ï¿½ï¿½ï¿½ï¿½service
     private void initConnection() {
         mConnection = new ServiceConnection(){
 
@@ -106,10 +106,10 @@ public class MainActivity extends Activity {
                 mService = ServiceDemoAidl.Stub.asInterface(service);
                 try {
                     if(mService.isInited()) {
-                        mService.registerCallback(mCallback);    // ×¢²áÏûÏ¢»Øµ÷
+                        mService.registerCallback(mCallback);    // ×¢ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Øµï¿½
                     }
                     else {
-                        exitService();  // ³õÊ¼»¯Ê§°Ü ÍË³ö
+                        exitService();  // ï¿½ï¿½Ê¼ï¿½ï¿½Ê§ï¿½ï¿½ ï¿½Ë³ï¿½
                     }
                 } catch (RemoteException e) {
                     // TODO Auto-generated catch block
@@ -149,12 +149,12 @@ public class MainActivity extends Activity {
             msg.what = msgID;
             
             switch (msgID) {
-                case Msg.SHOW_MSG:
-                case Msg.HIDE_MSG:
-                    b.putString("MSGTIP",strList.get(0));    // caÌáÊ¾¿òÏûÏ¢
-                    break;
-                default:
-                    break;
+//                case Msg.SHOW_MSG:
+//                case Msg.HIDE_MSG:
+//                    b.putString("MSGTIP",strList.get(0));    // caï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ï¢
+//                    break;
+//                default:
+//                    break;
             }
             
             msg.setData(b);
